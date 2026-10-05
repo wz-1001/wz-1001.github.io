@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Syeda Wafa Zahra</title>
+    <meta name="description" content="Syeda Wafa Zahra: MSc Data Science and AI student with a background in chemical engineering. Projects, education and contact details.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+    <script>
+        // Runs before first paint: marks JS as available and applies a saved theme.
+        document.documentElement.classList.add('js');
+        try {
+            var saved = localStorage.getItem('theme');
+            if (saved) document.documentElement.setAttribute('data-theme', saved);
+        } catch (e) {}
+    </script>
+    <style>
+        :root {
+            --ink: #1b2430;
+            --muted: #586373;
+            --rule: #d6dbe2;
+            --accent: #1f3a5f;
+            --accent-ink: #ffffff;
+            --link: #1f4f8a;
+            --tint: #f2f5f9;
+            --bg: #ffffff;
+            --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+            --sans: 'IBM Plex Sans', 'Segoe UI', Arial, sans-serif;
+        }
+        :root[data-theme="dark"] {
+            --ink: #e4e8ee;
+            --muted: #9aa5b4;
+            --rule: #2f3944;
+            --accent: #8fb3e0;
+            --accent-ink: #12171d;
+            --link: #8fb3e0;
+            --tint: #1a212a;
+            --bg: #12171d;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --ink: #e4e8ee;
+                --muted: #9aa5b4;
+                --rule: #2f3944;
+                --accent: #8fb3e0;
+                --accent-ink: #12171d;
+                --link: #8fb3e0;
+                --tint: #1a212a;
+                --bg: #12171d;
+            }
+        }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-padding-top: 4.5rem; }
+        @media (prefers-reduced-motion: no-preference) {
+            html { scroll-behavior: smooth; }
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: var(--sans);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .wrap { max-width: 60rem; margin: 0 auto; padding: 0 1.5rem; }
+
+        a {
+            color: var(--link);
+            text-underline-offset: 0.2em;
+            text-decoration-thickness: 1px;
+        }
+        a:hover { text-decoration-thickness: 2px; }
+        :focus-visible {
+            outline: 3px solid var(--link);
+            outline-offset: 3px;
+            border-radius: 3px;
+        }
+
+        /* Sticky navigation */
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: var(--bg);
+            border-bottom: 1px solid var(--rule);
+        }
+        .topbar .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            min-height: 3.5rem;
+        }
+        .brand {
+            font-family: var(--serif);
+            font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .topbar nav { display: flex; align-items: center; gap: 0.25rem 1.5rem; flex-wrap: wrap; }
+        .topbar nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            padding: 0.25rem 0;
+            border-bottom: 2px solid transparent;
+        }
+        .topbar nav a:hover { color: var(--ink); }
+        .topbar nav a[aria-current="true"] {
+            color: var(--ink);
+            border-bottom-color: var(--accent);
+        }
+        .theme-toggle {
+            font: inherit;
+            font-size: 0.875rem;
+            color: var(--ink);
+            background: none;
+            border: 1px solid var(--rule);
+            border-radius: 4px;
+            padding: 0.25rem 0.65rem;
+            cursor: pointer;
+        }
+        .theme-toggle:hover { border-color: var(--accent); }
+
+        /* Hero */
+        .hero { padding: 5rem 0 4rem; border-bottom: 1px solid var(--rule); }
+        h1 {
+            font-family: var(--serif);
+            font-size: clamp(2.5rem, 6vw, 3.75rem);
+            line-height: 1.05;
+            font-weight: 700;
+            letter-spacing: -0.015em;
+            color: var(--accent);
+            margin: 0 0 1.25rem;
+        }
+        .intro { font-size: 1.1875rem; max-width: 38rem; margin: 0 0 2rem; }
+        .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+        .btn {
+            display: inline-block;
+            font-weight: 500;
+            font-size: 0.9375rem;
+            text-decoration: none;
+            padding: 0.6rem 1.25rem;
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+            color: var(--accent);
+        }
+        .btn:hover { background: var(--tint); text-decoration: none; }
+        .btn.primary { background: var(--accent); color: var(--accent-ink); }
+        .btn.primary:hover { opacity: 0.9; background: var(--accent); }
+
+        /* Sections */
+        section { padding: 4rem 0; border-bottom: 1px solid var(--rule); }
+        section:last-of-type { border-bottom: none; }
+        h2 {
+            font-family: var(--serif);
+            font-size: 1.75rem;
+            font-weight: 600;
+            line-height: 1.25;
+            color: var(--accent);
+            margin: 0 0 1.5rem;
+        }
+        p { margin: 0 0 1rem; }
+        .prose { max-width: 40rem; }
+        .prose p:last-child { margin-bottom: 0; }
+
+        /* Projects: selector and detail panel */
+        .js-only { display: none; }
+        .js .js-only { display: block; }
+
+        .filter { margin-bottom: 1.75rem; }
+        .filter-label { font-size: 0.9375rem; color: var(--muted); margin: 0 0 0.6rem; }
+        .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .chip {
+            font: inherit;
+            font-size: 0.875rem;
+            color: var(--ink);
+            background: var(--bg);
+            border: 1px solid var(--rule);
+            border-radius: 999px;
+            padding: 0.25rem 0.9rem;
+            cursor: pointer;
+        }
+        .chip:hover { border-color: var(--accent); }
+        .chip[aria-pressed="true"] {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--accent-ink);
+        }
+        .filter-status { font-size: 0.875rem; color: var(--muted); margin: 0.75rem 0 0; min-height: 1.5em; }
+
+        .projects { display: grid; grid-template-columns: 17rem 1fr; gap: 2rem; align-items: start; }
+
+        .tablist { display: flex; flex-direction: column; gap: 0.25rem; }
+        .tab {
+            font: inherit;
+            text-align: left;
+            width: 100%;
+            color: var(--ink);
+            background: none;
+            border: 0;
+            border-left: 3px solid var(--rule);
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            transition: opacity 0.15s;
+        }
+        .tab:hover { background: var(--tint); }
+        .tab[aria-selected="true"] {
+            background: var(--tint);
+            border-left-color: var(--accent);
+        }
+        .tab .t-title { display: block; font-family: var(--serif); font-weight: 600; line-height: 1.35; }
+        .tab .t-tools { display: block; font-size: 0.8125rem; color: var(--muted); margin-top: 0.15rem; }
+        .tab.dim { opacity: 0.4; }
+        .tab.dim[aria-selected="true"] { opacity: 1; }
+
+        .panel {
+            border: 1px solid var(--rule);
+            border-radius: 6px;
+            padding: 1.75rem;
+            min-height: 14rem;
+        }
+        .panel[hidden] { display: none; }
+        .panel h3 {
+            font-family: var(--serif);
+            font-size: 1.375rem;
+            font-weight: 600;
+            line-height: 1.3;
+            margin: 0 0 0.25rem;
+        }
+        .panel .tools { color: var(--muted); font-size: 0.9375rem; margin: 0 0 1rem; }
+        .panel p:last-child { margin-bottom: 0; }
+
+        /* Without JavaScript, every project is listed in full */
+        html:not(.js) .panel { margin-bottom: 1.25rem; }
+        html:not(.js) .projects { display: block; }
+
+        /* Education */
+        .edu { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .edu-item { border-top: 3px solid var(--accent); padding-top: 1rem; }
+        .edu-item h3 {
+            font-family: var(--serif);
+            font-size: 1.125rem;
+            font-weight: 600;
+            line-height: 1.35;
+            margin: 0 0 0.15rem;
+        }
+        .edu-item .when { color: var(--muted); font-size: 0.9375rem; margin: 0 0 0.6rem; }
+        .edu-item p:last-child { margin-bottom: 0; }
+
+        /* Skills */
+        .skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.75rem 2rem; margin: 0; }
+        .skills div { border-top: 1px solid var(--rule); padding-top: 0.75rem; }
+        .skills dt { font-weight: 600; }
+        .skills dd { margin: 0; color: var(--muted); }
+
+        footer { border-top: 1px solid var(--rule); padding: 1.5rem 0 3rem; color: var(--muted); font-size: 0.875rem; }
+
+        @media (max-width: 760px) {
+            .brand { display: none; }
+            .topbar .wrap { justify-content: space-between; }
+            .hero { padding: 3rem 0 2.5rem; }
+            section { padding: 2.75rem 0; }
+            .projects { grid-template-columns: 1fr; gap: 1.25rem; }
+            .edu, .skills { grid-template-columns: 1fr; }
+            .panel { padding: 1.25rem; min-height: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="topbar">
+    <div class="wrap">
+        <a class="brand" href="#top">Syeda Wafa Zahra</a>
+        <nav aria-label="Sections">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <button class="theme-toggle" id="theme-toggle" type="button">Dark mode</button>
+        </nav>
+    </div>
+</div>
+
+<header class="hero" id="top">
+    <div class="wrap">
+        <h1>Syeda Wafa Zahra</h1>
+        <p class="intro">I am completing an MSc in Data Science and AI at the University of Liverpool. I hold a BEng in Chemical Engineering from the University of Manchester.</p>
+        <div class="actions">
+            <a class="btn primary" href="mailto:syedawafazahra10@gmail.com">Email</a>
+            <a class="btn" href="https://github.com/wz-1001">GitHub</a>
+            <a class="btn" href="https://www.linkedin.com/in/syeda-wafa-zahra-9384361b6/">LinkedIn</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section id="about">
+        <div class="wrap">
+            <h2>About</h2>
+            <div class="prose">
+                <p>Chemical engineering taught me to examine a complex process, identify where it loses efficiency, and design a solution to the problem. I transitioned into data science to apply the same approach to data.</p>
+                <p>My MSc dissertation examines the energy cost of machine learning. Where a random forest performs almost as well as a deep neural network, I ask how much additional carbon the larger model produces for that marginal gain. The aim is to allow practitioners to weigh this trade-off before committing to large-scale training.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="wrap">
+            <h2>Projects</h2>
+
+            <div class="filter js-only">
+                <p class="filter-label" id="filter-label">Filter by tool</p>
+                <div class="chips" role="group" aria-labelledby="filter-label">
+                    <button class="chip" type="button" data-tool="all" aria-pressed="true">All</button>
+                    <button class="chip" type="button" data-tool="Python" aria-pressed="false">Python</button>
+                    <button class="chip" type="button" data-tool="SQL" aria-pressed="false">SQL</button>
+                    <button class="chip" type="button" data-tool="MATLAB" aria-pressed="false">MATLAB</button>
+                    <button class="chip" type="button" data-tool="ASPEN Plus" aria-pressed="false">ASPEN Plus</button>
+                    <button class="chip" type="button" data-tool="Power BI" aria-pressed="false">Power BI</button>
+                    <button class="chip" type="button" data-tool="scikit-learn" aria-pressed="false">scikit-learn</button>
+                    <button class="chip" type="button" data-tool="CodeCarbon" aria-pressed="false">CodeCarbon</button>
+                </div>
+                <p class="filter-status" id="filter-status" role="status"></p>
+            </div>
+
+            <div class="projects">
+                <div class="tablist js-only" role="tablist" aria-orientation="vertical" aria-label="Projects">
+                    <button class="tab" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true" data-tools="Python|scikit-learn|CodeCarbon">
+                        <span class="t-title">The Carbon Cost of AI</span>
+                        <span class="t-tools">Python, scikit-learn, CodeCarbon</span>
+                    </button>
+                    <button class="tab" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1" data-tools="SQL">
+                        <span class="t-title">Financial reporting from ERP data</span>
+                        <span class="t-tools">SQL</span>
+                    </button>
+                    <button class="tab" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1" data-tools="MATLAB|ASPEN Plus">
+                        <span class="t-title">Chemical process simulation</span>
+                        <span class="t-tools">MATLAB, ASPEN Plus</span>
+                    </button>
+                    <button class="tab" role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false" tabindex="-1" data-tools="Power BI">
+                        <span class="t-title">Tracking student progress</span>
+                        <span class="t-tools">Power BI</span>
+                    </button>
+                </div>
+
+                <div class="panels">
+                    <div class="panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+                        <h3><a href="https://github.com/wz-1001/msc-dissertation-project">The Carbon Cost of AI</a></h3>
+                        <p class="tools">Python, scikit-learn, CodeCarbon</p>
+                        <p>My MSc dissertation project. The tool accepts a user's dataset and benchmarks the carbon emissions of deep learning models against those of simpler algorithms. This allows developers to judge whether the additional computation is justified by the gain in accuracy.</p>
+                    </div>
+
+                    <div class="panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2">
+                        <h3><a href="https://github.com/wz-1001/financial-reporting">Financial reporting from ERP data</a></h3>
+                        <p class="tools">SQL</p>
+                        <p>An independent project using business data held in an ERP system. It involved cleaning operational records, tracking budgets and structuring financial reports so that their readers could rely on the figures.</p>
+                    </div>
+
+                    <div class="panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3">
+                        <h3><a href="https://github.com/wz-1001/process-simulation">Chemical process simulation</a></h3>
+                        <p class="tools">MATLAB, ASPEN Plus</p>
+                        <p>Models and simulations of chemical processes, produced during my degree, which I used to tune control loops and improve system efficiency.</p>
+                    </div>
+
+                    <div class="panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4">
+                        <h3>Tracking student progress</h3>
+                        <p class="tools">Power BI</p>
+                        <p>I tracked student performance over time to identify the topics on which students struggled, and adapted my teaching methods accordingly. As a result, over 80% of the students went on to achieve top grades.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="wrap">
+            <h2>Education</h2>
+            <div class="edu">
+                <div class="edu-item">
+                    <h3>MSc Data Science and AI</h3>
+                    <p class="when">University of Liverpool, 2025 to 2026</p>
+                    <p>Applied AI, database systems and computational intelligence.</p>
+                </div>
+                <div class="edu-item">
+                    <h3>BEng Chemical Engineering</h3>
+                    <p class="when">University of Manchester, 2020 to 2023</p>
+                    <p>Process simulation, design and control. The analysis and optimisation of complex systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="wrap">
+            <h2>Technical skills</h2>
+            <dl class="skills">
+                <div>
+                    <dt>Languages</dt>
+                    <dd>Python, MATLAB, SQL, HTML</dd>
+                </div>
+                <div>
+                    <dt>Data and machine learning</dt>
+                    <dd>scikit-learn, pandas, NumPy, Matplotlib, CodeCarbon</dd>
+                </div>
+                <div>
+                    <dt>Engineering</dt>
+                    <dd>ASPEN Plus, process control</dd>
+                </div>
+                <div>
+                    <dt>Platforms and tools</dt>
+                    <dd>AWS, Power BI, Git</dd>
+                </div>
+            </dl>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="wrap">&copy; 2026 Syeda Wafa Zahra</div>
+</footer>
+
+<script>
+(function () {
+    var root = document.documentElement;
+
+    /* Theme toggle */
+    var themeBtn = document.getElementById('theme-toggle');
+    function currentTheme() {
+        var t = root.getAttribute('data-theme');
+        if (t) return t;
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    function updateThemeLabel() {
+        themeBtn.textContent = currentTheme() === 'dark' ? 'Light mode' : 'Dark mode';
+    }
+    updateThemeLabel();
+    themeBtn.addEventListener('click', function () {
+        var next = currentTheme() === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+        updateThemeLabel();
+    });
+
+    /* Project selector (tabs) */
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+    var panels = tabs.map(function (t) { return document.getElementById(t.getAttribute('aria-controls')); });
+    var active = 0;
+
+    function select(i, moveFocus) {
+        active = i;
+        tabs.forEach(function (t, j) {
+            var on = j === i;
+            t.setAttribute('aria-selected', on ? 'true' : 'false');
+            t.tabIndex = on ? 0 : -1;
+            panels[j].hidden = !on;
+        });
+        if (moveFocus) tabs[i].focus();
+    }
+
+    tabs.forEach(function (tab, i) {
+        tab.addEventListener('click', function () { select(i); });
+        tab.addEventListener('keydown', function (e) {
+            var n = null;
+            if (e.key === 'ArrowDown' || e.key === 'ArrowRight') n = (i + 1) % tabs.length;
+            else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') n = (i - 1 + tabs.length) % tabs.length;
+            else if (e.key === 'Home') n = 0;
+            else if (e.key === 'End') n = tabs.length - 1;
+            if (n !== null) { e.preventDefault(); select(n, true); }
+        });
+    });
+    select(0);
+
+    /* Tool filter */
+    var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+    var status = document.getElementById('filter-status');
+
+    chips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+            var tool = chip.getAttribute('data-tool');
+            var matches = 0;
+            var first = -1;
+
+            chips.forEach(function (c) { c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'); });
+
+            tabs.forEach(function (t, i) {
+                var tools = (t.getAttribute('data-tools') || '').split('|');
+                var match = tool === 'all' || tools.indexOf(tool) !== -1;
+                t.classList.toggle('dim', !match);
+                if (match) { matches++; if (first < 0) first = i; }
+            });
+
+            status.textContent = tool === 'all'
+                ? ''
+                : 'Showing ' + matches + ' of ' + tabs.length + ' projects that use ' + tool + '.';
+
+            if (first >= 0 && tabs[active].classList.contains('dim')) select(first);
+        });
+    });
+
+    /* Highlight the current section in the navigation */
+    var links = Array.prototype.slice.call(document.querySelectorAll('.topbar nav a'));
+    var targets = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+
+    if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                links.forEach(function (a) {
+                    a.removeAttribute('aria-current');
+                    if (a.getAttribute('href') === '#' + entry.target.id) a.setAttribute('aria-current', 'true');
+                });
+            });
+        }, { rootMargin: '-30% 0px -60% 0px' });
+        targets.forEach(function (t) { if (t) observer.observe(t); });
+    }
+})();
+</script>
+</body>
+</html>
